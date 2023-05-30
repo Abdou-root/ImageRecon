@@ -14,17 +14,18 @@ style.configure("custom.TButton", bordercolor="#0c6e03",
                 relief="raised", padding=10, extra=['shadow'], font=('Sukar', 14, "bold"),
                 bd=3, padx=10, pady=15)
 style.configure("custom.TFrame", borderless=True)
-style.configure("custom.Tlabel", font=("Sukar", 14, "bold"), relief="raised", padding=10, extra=['shadow'],
-                bd=3, padx=10, pady=15)
+style.configure("custom.TLabel", font=("Sukar", 14, "bold"),
+                padx=10, pady=15)
 style.configure("custom.Horizontal.TProgressbar", troughcolor="white", bordercolor="gray", dark=(0.3, 0.3, 0.3),
                 borderwidth=3)
 
 # Welcome message
-welcome_label = ttk.Label(window, text="Welcome to ReconAI, your AI tool!", font=("Sukar", 20, "bold"),
-                          style="custom.tlabel")
+welcome_label = ttk.Label(window, text="Welcome to ReconAI, your AI tool!", font=("Sukar", 24, "bold"),
+                          style="custom.TLabel")
 welcome_label.pack()
+
 # Create file_label before using it in browse_files function
-file_label = tk.Label(window, text="Select a file to proceed!", )
+file_label = ttk.Label(window, text="Select a file to proceed!", style="custom.TLabel", relief="raised")
 file_label.pack(pady=0)
 
 
@@ -50,23 +51,22 @@ def process_images():
 
 
 # Creating the GUI components
-
 image_frame = ttk.Frame(window, width=200, height=200, style="custom.TFrame")
 image_frame.pack(fill="both", expand=True, pady=20)
 
-image_label = ttk.Label(image_frame, text="Image", font=("Sukar", 14, "bold"), style="custom.tlabel")
+image_label = ttk.Label(image_frame, text="Image", font=("Sukar", 14, "bold"), style="custom.TLabel")
 image_label.pack()
 
 file_selection_button = ttk.Button(window, text="Browse", command=browse_files, style="custom.TButton")
 file_selection_button.pack()
 
-results_label = ttk.Label(window, text="Recognition Results:", font=("Sukar", 14, "bold"), style="custom.tlabel")
+results_label = ttk.Label(window, text="Recognition Results:", font=("Sukar", 14, "bold"), style="custom.TLabel")
 results_label.pack(pady=20)
 
 progress_bar = ttk.Progressbar(window, length=200, style="custom.Horizontal.TProgressbar")
 progress_bar.pack(pady=10)
 
-feedback_label = ttk.Label(window, text="Feedback Messages:", font=("Sukar", 12, "bold"), style="custom.tlabel")
+feedback_label = ttk.Label(window, text="Feedback Messages:", font=("Sukar", 12, "bold"), style="custom.TLabel")
 feedback_label.pack(pady=20)
 
 
@@ -83,7 +83,6 @@ start_analysis_button = ttk.Button(window, text="Start Analysis", command=start_
 start_analysis_button.pack(pady=20)
 
 # Analysis process and updating progress bar and display results
-
 
 # Create a menu bar
 menu_bar = tk.Menu(window)
