@@ -1,59 +1,65 @@
-### ReconAI: Celebrity Image Recognition System
 
-ReconAI is an advanced artificial intelligence(AI) project designed to recognize and classify images of celebrities using deep learning techniques. Built with Python and leveraging powerful libraries such as PyTorch, PIL, and Tkinter, ReconAI provides an intuitive graphical user interface (GUI) for users to easily interact with the system. This project demonstrates the capabilities of convolutional neural networks (CNNs) for image recognition tasks.
+# ReconAI: Celebrity Image Recognition System
 
-#### Project Structure
-- **data/**: Directory containing the training and testing datasets.
-  - **train/**: Training data set with images of various celebrities.
-  - **test/**: Testing data set used to evaluate the model's performance.
-- **utils/**: Contains utility scripts including the GUI and model prediction functionality.
-  - **gui.py**: Script for the graphical user interface allowing users to select an image for recognition.
-  - **model_training.py**: Training script for the CNN model using PyTorch.
-  - **prediction.py**: Script for predicting the celebrity in a given image.
-  - **preprocessing.py**: Script for preprocessing the dataset into a suitable format for training and testing.
+## Overview
+ReconAI is an artificial intelligence (AI) project aimed at recognizing and classifying celebrity images through deep learning. Utilizing Python and powerful libraries such as PyTorch, PIL, and Tkinter, it offers a user-friendly graphical interface (GUI), showcasing the strength of convolutional neural networks (CNN) in image recognition.
+
+## Project Structure
+### Directories
+- **data/**: Houses training and testing datasets.
+  - **train/**: Contains images of various celebrities for training.
+  - **test/**: Holds images for evaluating the model's accuracy.
+- **utils/**: Includes utility scripts for the GUI, model training, prediction, and preprocessing.
+  - **gui.py**: Graphical user interface script for image selection.
+  - **model_training.py**: Trains the CNN model with PyTorch.
+  - **prediction.py**: Predicts the celebrity in an input image.
+  - **preprocessing.py**: Prepares the dataset for training and testing.
+
+### Model File
 - **celebrity_model.pth**: The trained PyTorch model for celebrity recognition.
 
-#### Installation
-To run ReconAI, you will need Python 3.6 or above. Ensure you have the following packages installed:
+## Installation
+ReconAI requires Python 3.6 or newer. Install the following packages:
 - PyTorch
 - torchvision
 - PIL (Pillow)
 - Tkinter
 - ttkbootstrap
 
-You can install these dependencies using pip:
+Use pip to install the dependencies:
 ```bash
 pip install torch torchvision Pillow tk ttkbootstrap
 ```
 
-#### Training the Model
-If you wish to retrain the model with a custom dataset, place your images in the `data/` directory following the existing structure, then run:
+## How to Use
+### Training the Model
+To train the model with a custom dataset:
+1. Place your images in the `data/` directory, following the structure provided.
+2. Run the following command to train and save the model:
 ```bash
 python utils/model_training.py
 ```
-This will train a new model and save it as `celebrity_model.pth` in the project root.
 
-#### Prediction
-For direct prediction without using the GUI, you can use the `prediction.py` script:
+### Making Predictions
+For direct predictions without the GUI:
+1. Adjust the `test_image_path` in `utils/prediction.py`.
+2. Run:
 ```bash
 python utils/prediction.py
 ```
-Make sure to modify the `test_image_path` variable in the script to point to the image you want to predict.
 
-#### Running the GUI
-To start ReconAI, navigate to the project directory and run the `main.py` script:
+### Running the GUI
+To launch the ReconAI GUI:
+1. Navigate to the project directory.
+2. Execute:
 ```bash
 python main.py
 ```
-The GUI will open, allowing you to browse and select an image for celebrity recognition. The model's prediction will be displayed in the interface.
+3. Use the GUI to select and predict celebrity images.
 
-
-
-#### How It Works
-ReconAI uses a ResNet50 model pre-trained on ImageNet and fine-tuned on the celebrity dataset provided. The model is trained to classify images into different celebrity categories based on the dataset structure under `data/train` and `data/test`.
-
-The GUI script `gui.py` provides a user-friendly interface for interacting with the system, allowing users to upload images and view the recognition results instantly. 
+## How It Works
+ReconAI employs a ResNet50 model, initially trained on ImageNet and fine-tuned using the provided celebrity dataset. It classifies images into celebrity categories based on the dataset under `data/train` and `data/test`. The GUI simplifies system interaction, enabling instant upload and recognition.
 
 ---
 
-We hope you enjoy using ReconAI for your celebrity recognition needs. Your feedback and contributions are welcome to improve and expand the project's capabilities.
+**Enjoy exploring ReconAI for your celebrity recognition projects! We welcome your feedback and contributions to further enhance and broaden the project.**
